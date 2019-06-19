@@ -1,0 +1,18 @@
+
+<button mat-fab  mat-dialog-close style="float: right">
+        <mat-icon>close</mat-icon>
+      </button>
+      
+      <h1  mat-dialog-title>Deleção de Empresa </h1>
+
+      <mat-dialog-content> 
+          Deseja deletar a empresa:  {{data.cnpj}}
+      </mat-dialog-content> 
+
+     
+      <div mat-dialog-actions align="end">
+        <button  mat-dialog-close mat-raised-button style="float: right" color="primary">CANCELAR</button>
+        <button  (click)="delete()" mat-raised-button style="float: right" color="primary">DELETAR</button>
+      </div>
+      
+      

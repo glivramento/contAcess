@@ -1,0 +1,41 @@
+
+<button mat-fab  mat-dialog-close style="float: right">
+    <mat-icon>close</mat-icon>
+  </button>
+  
+  <h1 *ngIf="!data.edicao" mat-dialog-title>Cadastro de Pessoa </h1>
+  <h1 *ngIf="data.edicao" mat-dialog-title>Edição de Pessoa </h1>
+  
+  <div mat-dialog-content>
+    <!-- <mat-slide-toggle *ngIf="data.edicao">Ativo</mat-slide-toggle> -->
+  
+    <mat-form-field>
+      <input matInput placeholder="Nome"  [(ngModel)]="data.nome" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Empresa" [(ngModel)]="data.empresa" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Documento"  [(ngModel)]="data.documento" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Celular"  [(ngModel)]="data.celular" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email"  [(ngModel)]="data.eMail" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Placa do veículo"  [(ngModel)]="data.veiculoPlaca" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Modelo do veículo"  [(ngModel)]="data.veiculoModelo" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Cor do   veículo"  [(ngModel)]="data.veiculoCor" >
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button  (click)="save()" mat-raised-button style="float: right" color="primary">SALVAR</button>
+  </div>
+  
+  

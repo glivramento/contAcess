@@ -1,12 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { LiberacaoHomeComponent } from './liberacao-home/liberacao-home.component';
+import { LiberacaoComponent } from './liberacao.component';
+import { FormsModule } from '@angular/forms';
+import { DialogDataPessoaDialog } from './liberacao-home/liberacao-home.component';
+import { DialogConfirmationDataPessoaDialog } from './liberacao-home/liberacao-home.component';
 import {MatCheckboxModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
@@ -37,25 +35,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {CadastroModule} from './cadastro/cadastro.module';
-import {PortariaModule} from './portaria/portaria.module';
-import {LiberacaoModule} from './liberacao/liberacao.module';
-import { CadastroService } from './cadastro/cadastro.service';
-import { AuthService } from './auth.service';
-import { LiberacaoService } from './liberacao/liberacao.service';
-import { FormsModule } from '@angular/forms';
-
+import { BrowserModule }    from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { LiberacaoService } from './liberacao.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-  ],
+  declarations: [LiberacaoHomeComponent, LiberacaoComponent, DialogDataPessoaDialog, DialogConfirmationDataPessoaDialog],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NoopAnimationsModule,
+    CommonModule,
     MatCheckboxModule,
     MatButtonModule,
     MatInputModule,
@@ -86,17 +73,15 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    CadastroModule,
-    PortariaModule,
-    LiberacaoModule,
-    FormsModule
-    
+    FormsModule,
+    BrowserModule,
+    HttpClientModule
+  ]
+  , entryComponents: [
+    DialogDataPessoaDialog , 
+    DialogConfirmationDataPessoaDialog
   ],
-  providers: [ 
-    CadastroService
-    , AuthService
-    , LiberacaoService
-  ],
-  bootstrap: [AppComponent]
+  providers: [ LiberacaoService  ],
+  exports: [  ]
 })
-export class AppModule { }
+export class LiberacaoModule { }

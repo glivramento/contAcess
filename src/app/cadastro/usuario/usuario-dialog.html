@@ -1,0 +1,32 @@
+
+<button mat-fab  mat-dialog-close style="float: right">
+        <mat-icon>close</mat-icon>
+      </button>
+      
+      <h1 *ngIf="!data.edicao" mat-dialog-title>Cadastro de Usuario </h1>
+      <h1 *ngIf="data.edicao" mat-dialog-title>Edição de Usuario </h1>
+      
+      <div mat-dialog-content>
+        <!-- <mat-slide-toggle *ngIf="data.edicao">Ativo</mat-slide-toggle> -->
+      
+        <mat-form-field>
+          <input matInput placeholder="Login"  [(ngModel)]="data.login" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Senha" type="password"  [(ngModel)]="data.senha" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Nome"  [(ngModel)]="data.nome" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Cargo"  [(ngModel)]="data.cargo" >
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Celular"  [(ngModel)]="data.celular" >
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions align="end">
+        <button  (click)="save()" mat-raised-button style="float: right" color="primary">SALVAR</button>
+      </div>
+      
+      

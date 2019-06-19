@@ -1,0 +1,55 @@
+
+<button mat-fab  mat-dialog-close style="float: right">
+  <mat-icon>close</mat-icon>
+</button>
+
+<h1 *ngIf="!data.edicao" mat-dialog-title>Cadastro de Empresa </h1>
+<h1 *ngIf="data.edicao" mat-dialog-title>Edição de Empresa </h1>
+
+<div mat-dialog-content>
+  <!-- <mat-slide-toggle *ngIf="data.edicao">Ativo</mat-slide-toggle> -->
+
+  <mat-form-field>
+    <input matInput placeholder="Razão Social"  [(ngModel)]="data.razaoSocial" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Nome Fantasia"  [(ngModel)]="data.nomeFantasia" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="CNPJ"  [(ngModel)]="data.cnpj" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Inscrição Estadual"  [(ngModel)]="data.ie" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="E-mail"  [(ngModel)]="data.eMail" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Telefone"  [(ngModel)]="data.telefone" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="CEP"  [(ngModel)]="data.cep" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Logradouro"  [(ngModel)]="data.logradouro" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Número"  [(ngModel)]="data.numero" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Bairro"  [(ngModel)]="data.bairro" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Complemento"  [(ngModel)]="data.complemento" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cidade"  [(ngModel)]="data.cidade" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="UF"  [(ngModel)]="data.uf" >
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+  <button  (click)="save()" mat-raised-button style="float: right" color="primary">SALVAR</button>
+</div>
+

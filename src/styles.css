@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a {text-decoration:  none}
+
+
+.center-menu {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 300px;
+    height: 220px;
+    margin: auto;
+}
+
+.menu-btn {
+    background: #ECF0F1;
+    height: 60px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align:  right;
+    text-decoration: none;
+    color : #000000;
+
+}
+
+.menu-btn:hover {
+    color : #fff;
+    background : #808080
+
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.menu-icon {
+    line-height: 60px
+}
+

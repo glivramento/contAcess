@@ -1,0 +1,41 @@
+
+<button mat-fab  mat-dialog-close style="float: right">
+    <mat-icon>close</mat-icon>
+  </button>
+  
+  <h1 *ngIf="!data.edicao" mat-dialog-title>Cadastro da libeiração </h1>
+  <h1 *ngIf="data.edicao" mat-dialog-title>Edição da libeiração </h1>
+  
+  <div mat-dialog-content>
+    <!-- <mat-slide-toggle *ngIf="data.edicao">Ativo</mat-slide-toggle> -->
+  
+    <mat-form-field>
+      <input matInput placeholder="Período"  [(ngModel)]="data.periodo" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Data entrada"  [(ngModel)]="data.dataEntrada" >
+    </mat-form-field>
+    <!-- <mat-form-field>
+      <input matInput placeholder="Data saída"  [(ngModel)]="data.dataSaida" >
+    </mat-form-field> -->
+    <mat-form-field>
+      <input matInput placeholder="Motivo"  [(ngModel)]="data.motivo" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Observação"  [(ngModel)]="data.obs" >
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button  (click)="criarLiberacao()" mat-raised-button style="float: right" color="primary">SALVAR</button>
+  </div>
+  
+  
+  <!-- // , periodo : ""
+  // , dataLiberacao     :     "2019-06-16T18:38:37.809Z"    
+  // , dataEntrada     :     "2019-06-16T18:38:37.809Z"    
+  // , datadSaida      :       "2019-06-16T18:38:37.809Z"      
+  // , motivo      :       ""
+  // , obs     :     ""  
+  // , entradaPermanente     : false
+  // , idUsuarioLiberacao      :  false
+  // , idUsuarioPortaria     :  this.idFuncionario -->

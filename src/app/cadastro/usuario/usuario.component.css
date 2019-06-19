@@ -1,0 +1,17 @@
+.md-fab-bottom-right{
+    position: fixed !important;
+    right: 15px; /* Add this and change value to set the margin you want */
+    bottom: 15px
+}
+
+.searchIcon {
+    margin-top: 5px;
+    position: absolute;
+    border: 1px solid;
+    padding: 2px;
+    cursor : pointer
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */
+    padding-left: 10px
+}
