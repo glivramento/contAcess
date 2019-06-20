@@ -1,4 +1,16 @@
-<mat-icon (click)="logout()" >exit_to_app</mat-icon>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <!-- <mat-icon style="cursor: pointer" (click)="back()">
+       arrow_back
+    </mat-icon> -->
+    <div flex="90"></div>
+    <div style="float: right" flex="10" layout-align="end">
+      <mat-icon (click)="logout()" style="cursor: pointer; float:right"   >exit_to_app</mat-icon>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 
 <div class="center-menu">
   <div flex-layout="column">

@@ -13,7 +13,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  back(){
+    window.history.back();
+  }
+  
   logout(){
     this.authService.logout();
   }

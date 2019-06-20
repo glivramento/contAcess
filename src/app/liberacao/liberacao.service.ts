@@ -30,6 +30,7 @@ export class LiberacaoService {
     params.idEmpresa = 44;
     params.idPessoa = params.id;
     params.entradaPermanente = false;
+    params.idUsuarioLiberacao = 21;
     delete params.id;
       return this.http.post('http://appwebcondom.azurewebsites.net/api/0.2/liberacao/criarLiberacao', params);
   }

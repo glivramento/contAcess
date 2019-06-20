@@ -70,3 +70,31 @@ export class PortariaHomeComponent implements OnInit {
   }
 
 }
+
+// @Component({
+//   selector: 'portaria-pendente-dialog',
+//   templateUrl: 'liberacao-pendente-dialog.html',
+//   providers:  [ PortariaService ]
+// })
+// export class DialogConfirmationDataPessoaDialog {
+//   constructor(public dialog: MatDialog, private dialogRef: MatDialogRef<DialogConfirmationDataPessoaDialog>, @Inject(MAT_DIALOG_DATA) public data: DialogData,  private portariaService : LiberacaoService, private _snackBar: MatSnackBar) {}
+
+
+//   criarLiberacao() {
+//     this.liberacaoService.criarLiberacao(this.data)
+//       .subscribe((data) =>  {
+//           localStorage.setItem("refresh", "true");
+//           this.dialogRef.close();
+//           this._snackBar.open('Liberação criada com com sucesso!', null, {
+//             duration: 3000,
+//           });
+//       } ,
+//       error => {
+//         this._snackBar.open('Ocorreu um problema na criação da liberação', null, {
+//           duration: 3000,
+//         });
+//       });
+//   }
+
+//}
+

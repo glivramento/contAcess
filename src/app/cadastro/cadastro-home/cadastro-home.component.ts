@@ -9,6 +9,10 @@ export class CadastroHomeComponent implements OnInit {
 
   constructor() { }
 
+  back(){
+    window.history.back();
+  }
+
   ngOnInit() {
   }
 
