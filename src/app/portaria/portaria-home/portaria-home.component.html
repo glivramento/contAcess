@@ -3,6 +3,9 @@
     <mat-icon style="cursor: pointer" (click)="back()">
        arrow_back
     </mat-icon>
+    <span class="fill-space"></span>
+      <mat-icon (click)="logout()" style="cursor: pointer; float:right"   >exit_to_app</mat-icon>
+  
     <mat-form-field style="width: 300px; margin : 0 auto;" floatLabel="never">
       <input id="searchText" matInput [(ngModel)]="search" style="padding-left: 5px; padding-right: 5px" placeholder="QR Code">
       <mat-icon class="searchIcon" id="searchBtn" (click)="searchQrCode()">

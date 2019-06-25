@@ -7,7 +7,7 @@ import { PortariaService } from '../portaria.service';
 @Component({
   selector: 'app-portaria-home',
   templateUrl: './portaria-home.component.html',
-  styleUrls: ['./portaria-home.component.css']
+  styleUrls: ['../../app.component.css','./portaria-home.component.css']
 })
 export class PortariaHomeComponent implements OnInit {
   search : string;

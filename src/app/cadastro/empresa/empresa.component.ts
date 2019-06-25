@@ -26,7 +26,7 @@ export interface DialogData {
 @Component({
   selector: 'app-empresa',
   templateUrl: './empresa.component.html',
-  styleUrls: ['./empresa.component.css'],
+  styleUrls: ['../../app.component.css','./empresa.component.css'],
   providers:  [ CadastroService ]
 })
 

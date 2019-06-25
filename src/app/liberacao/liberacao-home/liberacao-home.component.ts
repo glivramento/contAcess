@@ -21,7 +21,7 @@ export interface DialogData {
 @Component({
   selector: 'app-liberacao-home',
   templateUrl: './liberacao-home.component.html',
-  styleUrls: ['./liberacao-home.component.css'],
+  styleUrls: ['../../app.component.css','./liberacao-home.component.css'],
   providers: [ LiberacaoService]
 })
 export class LiberacaoHomeComponent implements OnInit {

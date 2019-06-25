@@ -18,7 +18,7 @@ export interface DialogData {
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css'],
+  styleUrls: ['../../app.component.css','./usuario.component.css'],
   providers:  [ CadastroService ]
 })
 
