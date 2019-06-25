@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';  
 import { PortariaService } from '../portaria.service';
+import { AuthService } from '../../auth.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class PortariaHomeComponent implements OnInit {
   search : string;
   data : any;
 
-  constructor(public dialog: MatDialog, private portariaService : PortariaService, private _snackBar: MatSnackBar) { }
+  constructor(public dialog: MatDialog, private portariaService : PortariaService, private _snackBar: MatSnackBar, private authService: AuthService) { }
 
   ngOnInit() {
      this.data = {};
@@ -21,6 +22,11 @@ export class PortariaHomeComponent implements OnInit {
 
   back(){
     window.history.back();
+  }
+
+
+  logout(){
+    this.authService.logout();
   }
 
   searchQrCode(){

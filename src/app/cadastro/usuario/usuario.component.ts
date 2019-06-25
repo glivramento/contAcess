@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';  
 import { CadastroService } from '../cadastro.service';
+import { AuthService } from '../../auth.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 
@@ -23,7 +24,7 @@ export interface DialogData {
 })
 
 export class UsuarioComponent implements OnInit {
-  constructor(public dialog: MatDialog, private cadastroService : CadastroService, private _snackBar: MatSnackBar) { }
+  constructor(public dialog: MatDialog, private cadastroService : CadastroService, private _snackBar: MatSnackBar, private authService: AuthService) { }
   data : any;
   search : string;
 
@@ -33,6 +34,10 @@ export class UsuarioComponent implements OnInit {
     
   back(){
     window.history.back();
+  }
+
+  logout(){
+    this.authService.logout();
   }
   
   abrirModalCadastro(){

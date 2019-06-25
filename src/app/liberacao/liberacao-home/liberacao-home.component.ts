@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';  
 import { LiberacaoService } from '../liberacao.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { AuthService } from '../../auth.service';
 
 
 export interface DialogData {
@@ -14,8 +15,17 @@ export interface DialogData {
   , veiculoPlaca : false
   , veiculoModelo : false
   , veiculoCor : false
+  , edicao : false
 
 
+}
+
+
+export interface DialogDataLiberacao {
+  dataEntrada : null
+  , motivo : null
+  , obs : null 
+  , periodo : null 
 }
 
 @Component({
@@ -26,7 +36,7 @@ export interface DialogData {
 })
 export class LiberacaoHomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private liberacaoService : LiberacaoService, private _snackBar: MatSnackBar) { }
+  constructor(public dialog: MatDialog, private liberacaoService : LiberacaoService, private _snackBar: MatSnackBar, private authService: AuthService) { }
 
   data : any;
   search : string;
@@ -35,6 +45,11 @@ export class LiberacaoHomeComponent implements OnInit {
   ngOnInit() {
     this.idFuncionario =  localStorage.getItem('idFuncionario');
   }
+
+  logout(){
+    this.authService.logout();
+  }
+
 
     
   back(){
@@ -202,7 +217,7 @@ export class DialogDataPessoaDialog {
   providers:  [ LiberacaoService ]
 })
 export class DialogConfirmationDataPessoaDialog {
-  constructor(public dialog: MatDialog, private dialogRef: MatDialogRef<DialogConfirmationDataPessoaDialog>, @Inject(MAT_DIALOG_DATA) public data: DialogData,  private liberacaoService : LiberacaoService, private _snackBar: MatSnackBar) {}
+  constructor(public dialog: MatDialog, private dialogRef: MatDialogRef<DialogConfirmationDataPessoaDialog>, @Inject(MAT_DIALOG_DATA) public data: DialogDataLiberacao,  private liberacaoService : LiberacaoService, private _snackBar: MatSnackBar) {}
 
 
   criarLiberacao() {
