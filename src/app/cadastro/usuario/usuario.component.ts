@@ -13,6 +13,7 @@ export interface DialogData {
   , cargo : null
   , celular : null
   , edicao : false
+  , acesso : null
 }
 
 
@@ -51,6 +52,7 @@ export class UsuarioComponent implements OnInit {
         , cargo : null
         , celular : null
         , edicao : false
+        , acesso : null
       }
     });
   }
@@ -60,8 +62,10 @@ export class UsuarioComponent implements OnInit {
       this.cadastroService.searchUsuario(this.search)
       .subscribe((data) => 
         {
-          if (data)
+          if (data) {
             this.data = data
+            this.data.acesso = ""+this.data.acesso;
+          }
           else  
           this._snackBar.open('Usuario não encontrado =(', null, {
             duration: 3000,
@@ -91,6 +95,7 @@ export class UsuarioComponent implements OnInit {
         , cargo : this.data.cargo
         , celular : this.data.celular
         , edicao : true
+        , acesso : this.data.acesso
       }
     })
     .afterClosed().subscribe(result => {

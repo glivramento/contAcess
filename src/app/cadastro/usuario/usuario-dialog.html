@@ -24,6 +24,15 @@
         <mat-form-field>
           <input matInput placeholder="Celular"  [(ngModel)]="data.celular" >
         </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Grupo de acesso</mat-label>
+          <mat-select [(ngModel)]="data.acesso" >
+            <mat-option value="0">Administrador</mat-option>
+            <mat-option value="1">Funcionário</mat-option>
+            <mat-option value="2">Portaria</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div mat-dialog-actions align="end">
         <button  (click)="save()" mat-raised-button style="float: right" color="primary">SALVAR</button>
