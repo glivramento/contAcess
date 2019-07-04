@@ -4,6 +4,7 @@ import { PortariaHomeComponent } from './portaria-home/portaria-home.component';
 import { EntradaSemQrcodeComponent } from './entrada-sem-qrcode/entrada-sem-qrcode.component';
 import { HistoricoComponent } from './historico/historico.component';
 import { FormsModule } from '@angular/forms';
+import { TableFilteringExample }  from './entrada-sem-qrcode/entrada-sem-qrcode.component';
 import {MatCheckboxModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
@@ -34,14 +35,18 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { BrowserModule }    from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { PortariaService } from './portaria.service';
+import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
 @NgModule({
-  declarations: [PortariaHomeComponent, EntradaSemQrcodeComponent, HistoricoComponent],
+  declarations: [PortariaHomeComponent, EntradaSemQrcodeComponent, HistoricoComponent, TableFilteringExample],
   imports: [
     CommonModule,
     MatCheckboxModule,
@@ -76,12 +81,14 @@ import { PortariaService } from './portaria.service';
     MatPaginatorModule,
     FormsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatNativeDateModule
   ],
-  entryComponents: [
-    // DialogDataUsuarioDialog , 
-    // DialogConfirmationDataUsuarioDialog
-  ],
+  entryComponents: [TableFilteringExample],
+  bootstrap: [TableFilteringExample],
   providers: [ PortariaService  ]
 })
 export class PortariaModule { }
+
+platformBrowserDynamic().bootstrapModule(PortariaModule);

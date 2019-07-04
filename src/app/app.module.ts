@@ -44,6 +44,7 @@ import { CadastroService } from './cadastro/cadastro.service';
 import { AuthService } from './auth.service';
 import { LiberacaoService } from './liberacao/liberacao.service';
 import { FormsModule } from '@angular/forms';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 
 @NgModule({
@@ -100,3 +101,5 @@ import { FormsModule } from '@angular/forms';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
