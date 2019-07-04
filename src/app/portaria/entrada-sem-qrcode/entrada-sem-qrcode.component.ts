@@ -60,7 +60,7 @@ export class EntradaSemQrcodeComponent implements OnInit {
 export class TableFilteringExample {
   constructor(private portariaService : PortariaService, private _snackBar: MatSnackBar) {}
   list : any;
-  displayedColumns: string[] = ['periodo', 'motivo', 'codigoAcesso', 'dataLiberacao'];
+  displayedColumns: string[] = ['periodo', 'motivo', 'codigoAcesso', 'dataLiberacao', 'liberar'];
   dataSource = new MatTableDataSource(this.list);
 
   applyFilter(filterValue: string) {
@@ -88,4 +88,42 @@ export class TableFilteringExample {
   });
 
   }
+
+  liberarAcesso(element){
+    this.portariaService.liberarAcesso(21, element.id )
+    .subscribe((data) => 
+      {
+        console.log('veio', data);
+        if (data) {
+          this._snackBar.open('Liberação realizada com sucesso', null, {
+          });
+          this.portariaService.listarLiberacoesPendentes()
+          .subscribe((data) => 
+            {
+              console.log('veio', data);
+              if (data) {
+                this.list = data
+                this.dataSource =  new MatTableDataSource(this.list);
+              }
+              else  
+              this._snackBar.open('QR Code não encontrado =(', null, {
+                duration: 3000,
+              });
+            }  ,
+          error => {
+            this._snackBar.open('QR Code não encontrado =(', null, {
+              duration: 3000,
+            });
+          });
+        }
+      }  ,
+    error => {
+      this._snackBar.open('Ocorreu um problema com a liberação, tente novamente em breve', null, {
+        duration: 3000,
+      });
+    }
+      
+    ); 
+}
+
 }
