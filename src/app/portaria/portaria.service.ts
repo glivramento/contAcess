@@ -10,7 +10,6 @@ export class PortariaService {
 
   searchQrCode(qrCode) {
     return this.http.get('https://appwebcondom.azurewebsites.net/api/0.2/liberacao/buscarLiberacaoCodigoQrCode/' + qrCode);
-    return this.http.get('https://appwebcondom.azurewebsites.net/api/0.2/liberacao/buscarLiberacaoPendente');
   }
   
   liberarAcesso(idUsuario, idLiberacao){
@@ -18,7 +17,11 @@ export class PortariaService {
   }
 
   listarLiberacoesPendentes(){
-    return this.http.get('https://appwebcondom.azurewebsites.net/api/0.2/liberacao/buscarLiberacaoPendente');
+    return this.http.get('https://appwebcondom.azurewebsites.net/api/0.2/liberacao/buscarLiberacaoPortaria/0');
+  }
+
+  listarHistoricoLiberacoes(){
+    return this.http.get('https://appwebcondom.azurewebsites.net/api/0.2/liberacao/buscarLiberacaoPortaria/1');
   }
 
 

@@ -5,6 +5,7 @@ import { EntradaSemQrcodeComponent } from './entrada-sem-qrcode/entrada-sem-qrco
 import { HistoricoComponent } from './historico/historico.component';
 import { FormsModule } from '@angular/forms';
 import { TableFilteringExample }  from './entrada-sem-qrcode/entrada-sem-qrcode.component';
+import { TableHistoricoFilteringExample }  from './historico/historico.component';
 import {MatCheckboxModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
@@ -46,7 +47,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
-  declarations: [PortariaHomeComponent, EntradaSemQrcodeComponent, HistoricoComponent, TableFilteringExample],
+  declarations: [PortariaHomeComponent, EntradaSemQrcodeComponent, HistoricoComponent, TableFilteringExample, TableHistoricoFilteringExample],
   imports: [
     CommonModule,
     MatCheckboxModule,

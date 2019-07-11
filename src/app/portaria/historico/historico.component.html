@@ -1,3 +1,20 @@
-<p>
-  historico works!
-</p>
+
+<mat-toolbar color="primary">
+  <div id="header" layout="row" style="display: flex; width: 100%; height: 100%" >
+    <div>
+    <mat-icon style="cursor: pointer; margin-top: 22px; float: left;" (click)="back()">
+      arrow_back
+    </mat-icon>
+    </div>
+    <div style="text-align:  center">
+      <img src="../../assets/img/estrela_logo_transparente.png">
+    </div>
+    <div>
+      <mat-icon (click)="logout()" style="cursor: pointer; float:right; margin-top: 20px;" >exit_to_app</mat-icon>
+    </div>
+  </div>
+</mat-toolbar>
+
+
+
+<table-historico-liberacoes></table-historico-liberacoes>

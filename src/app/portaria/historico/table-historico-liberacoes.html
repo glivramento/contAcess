@@ -41,14 +41,12 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="dataLiberacao">
       <th mat-header-cell *matHeaderCellDef> Data de liberação </th>
-      <td mat-cell *matCellDef="let element"> {{element.dataLiberacao | date: 'dd/MM/yyyy hh:mm' }} </td>
+      <td mat-cell *matCellDef="let element"> {{element.dataLiberacao | date: 'dd/MM/yyyy hh:mm'}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="liberar">
-      <th mat-header-cell *matHeaderCellDef> Liberar </th>
-      <td mat-cell *matCellDef="let element"> <mat-icon  style="cursor: pointer" (click)="liberarAcesso(element)">
-        vpn_key
-      </mat-icon> </td>
+    <ng-container matColumnDef="dataEntrada">
+        <th mat-header-cell *matHeaderCellDef> Data de entrada </th>
+        <td mat-cell *matCellDef="let element"> {{element.dataEntrada | date: 'dd/MM/yyyy hh:mm'}} </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

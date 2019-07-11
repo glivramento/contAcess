@@ -36,17 +36,29 @@ export class AuthService {
   //   return false;
   // }
 
-  
+  validPermission(url){
+     let user = JSON.parse(localStorage.getItem('funcionario'));
+     if (url == '/cadastros' || url == '/cadastros/empresas' || url == '/cadastros/usuarios') {
+        if (user.acesso != 0) return false;
+     }
+     if (url == '/liberacao') {
+        if (user.acesso == 2) return false;
+     }
+     return true;
+  }
+
 
   login(login,senha) {
     interface Data {
       id?: string
     }
 
-    this.http.get('https://appwebcondom.azurewebsites.net/api/0.2/usuario/buscarUsuarioLoginSenha/'+login+'/'+ senha).subscribe((data : Data) =>  {
+    this.http.get('https://appwebcondom.azurewebsites.net/api/0.2/usuario/buscarUsuarioLoginSenha/'+login+'/'+ senha).subscribe((data : Data
+    ) =>  {
       localStorage.setItem('token', `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE1MzMyNzM5NjksImV4cCI6MTU2NDgxMDAwNSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoiVGVzdCBHdWFyZCIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20ifQ.GA0Y9gYIjmx1jLwuRHuBgZ8m6o-NgkD84nO0ym68CWo`);
       if (data && data.id)
         localStorage.setItem('idFuncionario', data.id);
+        localStorage.setItem('funcionario', JSON.stringify(data));
       this._router.navigate(['/home']);
       } ,
       error => {

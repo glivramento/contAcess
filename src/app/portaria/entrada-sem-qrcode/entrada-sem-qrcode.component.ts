@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Pipe, PipeTransform  } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';  
 import { PortariaService } from '../portaria.service';
@@ -22,22 +23,7 @@ export class EntradaSemQrcodeComponent implements OnInit {
   constructor( private portariaService : PortariaService, private _snackBar: MatSnackBar, private authService: AuthService) { }
   list : any;
   ngOnInit() {
-    // this.portariaService.listarLiberacoesPendentes()
-    //   .subscribe((data) => 
-    //     {
-    //       console.log('veio', data);
-    //       if (data)
-    //         this.list = data
-    //       else  
-    //       this._snackBar.open('QR Code não encontrado =(', null, {
-    //         duration: 3000,
-    //       });
-    //     }  ,
-    //   error => {
-    //     this._snackBar.open('QR Code não encontrado =(', null, {
-    //       duration: 3000,
-    //     });
-    //   });
+
   }
 
   back(){
@@ -60,7 +46,7 @@ export class EntradaSemQrcodeComponent implements OnInit {
 export class TableFilteringExample {
   constructor(private portariaService : PortariaService, private _snackBar: MatSnackBar) {}
   list : any;
-  displayedColumns: string[] = ['periodo', 'motivo', 'codigoAcesso', 'dataLiberacao', 'liberar'];
+  displayedColumns: string[] = ['nome', 'documento', 'usuarioLiberacao', 'obs' , 'periodo', 'motivo', 'codigoAcesso', 'dataLiberacao', 'liberar'];
   dataSource = new MatTableDataSource(this.list);
 
   applyFilter(filterValue: string) {
