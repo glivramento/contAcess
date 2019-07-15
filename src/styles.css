@@ -49,3 +49,6 @@ a {text-decoration:  none}
     line-height: 60px
 }
 
+.mat-form-field {
+padding-right: 10px;
+}

@@ -9,7 +9,8 @@ export class CadastroService {
   constructor(private http: HttpClient) { }
 
   save(params) {
-    params.idEmpresa = 60;
+    let empresa = JSON.parse(localStorage.getItem('funcionario')).idEmpresa;
+    params.idEmpresa = empresa;
     if (!params.edicao) 
       return this.http.post('https://appwebcondom.azurewebsites.net/api/0.2/empresa/adicionar', params);
     if (params.edicao) 
@@ -25,7 +26,8 @@ export class CadastroService {
   }
 
   saveUsuario(params) {
-    params.idEmpresa = 60;
+    let empresa = JSON.parse(localStorage.getItem('funcionario')).idEmpresa;
+    params.idEmpresa = empresa;
     params.ativo = true;
     if (!params.edicao) 
       return this.http.post('https://appwebcondom.azurewebsites.net/api/0.2/usuario/adicionar', params);

@@ -3,26 +3,44 @@
     <mat-icon>close</mat-icon>
   </button>
   
-  <h1  mat-dialog-title>Cadastro da libeiração </h1>
+  <h1  mat-dialog-title>Cadastro da liberação </h1>
   <!-- <h1 *ngIf="data.edicao" mat-dialog-title>Edição da libeiração </h1> -->
   
   <div mat-dialog-content>
     <!-- <mat-slide-toggle *ngIf="data.edicao">Ativo</mat-slide-toggle> -->
   
     <mat-form-field>
-      <input matInput placeholder="Período"  [(ngModel)]="data.periodo" >
+      <!-- <input matInput placeholder="Período"  [(ngModel)]="data.periodo" > -->
+      <mat-label>Período</mat-label>
+      <mat-select [(ngModel)]="data.periodo" >
+        <mat-option value="Manha">Manhã</mat-option>
+        <mat-option value="Tarde">Tarde</mat-option>
+        <mat-option value="Noite">Noite</mat-option>
+      </mat-select>
     </mat-form-field>
-    <mat-form-field>
+    <!-- <mat-form-field>
       <input matInput placeholder="Data entrada"  [(ngModel)]="data.dataEntrada" >
+    </mat-form-field> -->
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="data.dataEntrada" placeholder="Data de entrada">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <!-- <mat-form-field>
       <input matInput placeholder="Data saída"  [(ngModel)]="data.dataSaida" >
     </mat-form-field> -->
     <mat-form-field>
-      <input matInput placeholder="Motivo"  [(ngModel)]="data.motivo" >
+      <!-- <input matInput placeholder="Motivo"  [(ngModel)]="data.motivo" > -->
+      <mat-label>Motivo</mat-label>
+      <mat-select [(ngModel)]="data.motivo" >
+        <mat-option value="funcionario">Funcioário</mat-option>
+        <mat-option value="reuniao">Reunião</mat-option>
+        <mat-option value="visita">Visita</mat-option>
+      </mat-select>
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Observação"  [(ngModel)]="data.obs" >
+    <mat-form-field style="width: 90%">
+        <textarea matInput placeholder="Observação" cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize" [(ngModel)]="data.obs"></textarea>
     </mat-form-field>
   </div>
   <div mat-dialog-actions align="end">

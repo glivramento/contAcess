@@ -10,7 +10,8 @@ export class LiberacaoService {
 
 
   savePessoa(params) {
-    params.idEmpresa = 60;
+    let funcionario = JSON.parse(localStorage.getItem('funcionario'));
+    params.idEmpresa = funcionario.idEmpresa;
     params.ativo = true;
     if (!params.edicao) 
       return this.http.post('https://appwebcondom.azurewebsites.net/api/0.2/pessoa/adicionar', params);
@@ -27,10 +28,11 @@ export class LiberacaoService {
   }
 
   criarLiberacao(params) {
-    params.idEmpresa = 44;
+    let funcionario = JSON.parse(localStorage.getItem('funcionario'));
+    params.idEmpresa = funcionario.idEmpresa;
     params.idPessoa = params.id;
     params.entradaPermanente = false;
-    params.idUsuarioLiberacao = 21;
+    params.idUsuarioLiberacao = funcionario.id;
     delete params.id;
       return this.http.post('https://appwebcondom.azurewebsites.net/api/0.2/liberacao/criarLiberacao', params);
   }
