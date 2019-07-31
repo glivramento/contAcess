@@ -16,6 +16,7 @@ export interface DialogData {
   , veiculoModelo : false
   , veiculoCor : false
   , edicao : false
+  , idPessoa : null
 
 
 }
@@ -196,7 +197,7 @@ export class DialogDataPessoaDialog {
               , veiculoPlaca : this.data.veiculoPlaca
               , veiculoModelo : this.data.veiculoModelo
               , veiculoCor : this.data.veiculoCor
-              , edicao : true
+              , idPessoa : data.idObjeto
             }
           })
           .afterClosed().subscribe(result => {

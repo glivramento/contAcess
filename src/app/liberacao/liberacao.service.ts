@@ -30,7 +30,7 @@ export class LiberacaoService {
   criarLiberacao(params) {
     let funcionario = JSON.parse(localStorage.getItem('funcionario'));
     params.idEmpresa = funcionario.idEmpresa;
-    params.idPessoa = params.id;
+    params.idPessoa = params.idPessoa;
     params.entradaPermanente = false;
     params.idUsuarioLiberacao = funcionario.id;
     delete params.id;
