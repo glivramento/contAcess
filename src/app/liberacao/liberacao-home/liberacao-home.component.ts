@@ -27,6 +27,7 @@ export interface DialogDataLiberacao {
   , motivo : null
   , obs : null 
   , periodo : null 
+  , idPessoa : null
 }
 
 @Component({
@@ -180,7 +181,7 @@ export class DialogDataPessoaDialog {
 
   save() {
     this.liberacaoService.savePessoa(this.data)
-      .subscribe((data) =>  {
+      .subscribe((data : any) =>  {
         // if (data.valido) {
           this.dialogRef.close();
           this._snackBar.open('Pessoa salvo com sucesso!', null, {
